@@ -1,4 +1,4 @@
-import type {Product, Sale} from '../services/types'
+import type {Product} from '../services/types'
 export interface ProductDetailsType {
   title: string
   image: string
@@ -7,7 +7,6 @@ export interface ProductDetailsType {
 }
 export interface SalesNumbersType {}
 export const getProductDetails = (product: Product): ProductDetailsType => {
-  //   const {title, image, subtitle, tags} = product
   return {
     title: product?.title,
     image: product?.image,
@@ -20,6 +19,8 @@ interface Sales {
   retailsSales: number[]
   wholesaleSales: number[]
   weekEnding: string[]
+  unitsSold: number[]
+  retailerMargin: number[]
 }
 export const getProductSalesNumbers = (product: Product) => {
   if (!product) return
@@ -27,12 +28,16 @@ export const getProductSalesNumbers = (product: Product) => {
   const sales: Sales = {
     retailsSales: [],
     wholesaleSales: [],
-    weekEnding: []
+    weekEnding: [],
+    unitsSold: [],
+    retailerMargin: []
   }
   for (let element of product?.sales) {
     sales.retailsSales.push(element.retailSales)
     sales.wholesaleSales.push(element.wholesaleSales)
     sales.weekEnding.push(element.weekEnding)
+    sales.unitsSold.push(element.unitsSold)
+    sales.retailerMargin.push(element.retailerMargin)
   }
   return sales
 }

@@ -27,7 +27,7 @@ export interface Sale {
   retailerMargin: number
 }
 
-export interface ChartDataSets {
+export interface SalesDataTypes {
   retailsSales: number[]
   wholesaleSales: number[]
   weekEnding: string[]

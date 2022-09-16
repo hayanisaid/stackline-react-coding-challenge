@@ -15,7 +15,6 @@ const Product: React.FunctionComponent = () => {
   }, [!data])
 
   const productDetails = getProductDetails(data.productData[0])
-
   return (
     <div className={s.container}>
       <ProductCard details={productDetails} />
