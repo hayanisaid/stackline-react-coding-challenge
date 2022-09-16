@@ -1,0 +1,10 @@
+.container {
+  height: 50px;
+  background-color: #062849;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.logo {
+  margin-left: 20px;
+}

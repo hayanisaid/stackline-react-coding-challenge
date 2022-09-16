@@ -1,0 +1,12 @@
+.container {
+  height: 15px;
+  margin: 4px;
+  width: auto;
+  padding: 2px 3px;
+  display: flex;
+  align-items: center;
+  border: 0.5px solid #e2e2e2;
+}
+.container span {
+  font-size: 0.4em;
+}
