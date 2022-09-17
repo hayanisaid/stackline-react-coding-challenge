@@ -2,9 +2,9 @@ import {createSlice, createAsyncThunk} from '@reduxjs/toolkit'
 import {fetchData} from '../../services/api'
 import {RootState} from '../store'
 import {ResponseDataType} from '../../services/types'
-interface iStateType {
+export interface iStateType {
   isLoading: Boolean
-  error: string | null
+  error: string | undefined
   productData: ResponseDataType
 }
 
@@ -18,8 +18,8 @@ export const fetchProduct = createAsyncThunk('product/fetchProductData', async (
 })
 
 const initialState: iStateType = {
-  isLoading: true,
-  error: null,
+  isLoading: false,
+  error: undefined,
   productData: []
 }
 export const productSlice = createSlice({
@@ -37,6 +37,10 @@ export const productSlice = createSlice({
     builder.addCase(fetchProduct.fulfilled, (state, {payload}) => {
       state.isLoading = true
       state.productData = payload
+    })
+    builder.addCase(fetchProduct.rejected, (state, {payload, error}) => {
+      state.isLoading = false
+      state.error = error.message
     })
   }
 })
