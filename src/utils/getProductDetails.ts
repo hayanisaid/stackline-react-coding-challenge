@@ -53,12 +53,23 @@ type sortDataTableType = {
   sortConfig: SortConfigType
 }
 export const sortDataTable = ({data, sortConfig}: sortDataTableType) => {
-  const sortBy = sortConfig.key
+  const sortBy: any = sortConfig.key
 
   const sorted = Object.values(data).sort((a: any, b: any) => {
     if (sortConfig.direction === 'ascending') {
+      // sort by date
+      if (sortBy === 'weekEnding') {
+        let valueA: any = new Date(a[sortBy])
+        let valueB: any = new Date(b[sortBy])
+        return valueA - valueB
+      }
       return a[sortBy] - b[sortBy]
     } else {
+      if (sortBy === 'weekEnding') {
+        let valueA: any = new Date(a[sortBy])
+        let valueB: any = new Date(b[sortBy])
+        return valueB - valueA
+      }
       return b[sortBy] - a[sortBy]
     }
   })
