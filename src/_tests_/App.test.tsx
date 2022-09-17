@@ -2,13 +2,13 @@ import React from 'react'
 import {render, screen} from '@testing-library/react'
 import {rest} from 'msw'
 import {setupServer} from 'msw/node'
-import {renderWithProviders} from './utils/tests-utils'
-import Product from './components/Product'
-import App from './App'
-import {store} from './redux/store'
-import reducer, {fetchProduct} from './redux/reducers/productSlice'
+import {renderWithProviders} from '../utils/tests-utils'
+import Product from '../components/Product'
+import App from '../App'
+import {store} from '../redux/store'
+import reducer, {fetchProduct} from '../redux/reducers/productSlice'
 const data_url = './data.json'
-const json = require('./services/data.json')
+const json = require('../services/data.json')
 export const handlers = [
   rest.get(data_url, (req, res, ctx) => {
     return res(ctx.json(json), ctx.delay(150))
