@@ -2,12 +2,13 @@ import * as React from 'react'
 import s from './ProductCard.module.css'
 import ProductTag from '../ProductTag'
 import {ProductDetailsType} from '../../utils/getProductDetails'
+import Loading from '../common/Loading'
 interface ProductCardProps {
   details: ProductDetailsType
 }
 const ProductCard: React.FunctionComponent<ProductCardProps> = ({details}) => {
   if (!details) {
-    return <span>...Loading</span>
+    return <Loading />
   }
   return (
     <div className={s.container}>

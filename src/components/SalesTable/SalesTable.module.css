@@ -4,6 +4,7 @@
   border-collapse: collapse;
   vertical-align: middle;
   letter-spacing: 1px;
+  text-align: center;
 }
 .rowContainer {
   padding: 1em;
@@ -25,4 +26,11 @@ table thead td {
   margin: 1em 0;
   padding: 1em;
   text-align: center;
+  cursor: pointer;
+}
+.sortButton {
+  font-weight: bold;
+  color: #666;
+  background: none;
+  border: 0;
 }

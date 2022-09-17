@@ -12,7 +12,6 @@ interface iStateType {
 export const fetchProduct = createAsyncThunk('product/fetchProductData', async () => {
   try {
     const data: ResponseDataType = await fetchData()
-    console.log(data)
     return data
   } catch (error) {
     return Promise.reject(error)
@@ -43,5 +42,4 @@ export const productSlice = createSlice({
     })
   }
 })
-//export const {fetchProductData} = productSlice.actions
 export default productSlice.reducer

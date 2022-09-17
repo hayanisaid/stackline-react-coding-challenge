@@ -24,7 +24,6 @@ interface Sales {
 }
 export const getProductSalesNumbers = (product: Product) => {
   if (!product) return
-  console.log(product)
   const sales: Sales = {
     retailsSales: [],
     wholesaleSales: [],
@@ -40,4 +39,28 @@ export const getProductSalesNumbers = (product: Product) => {
     sales.retailerMargin.push(element.retailerMargin)
   }
   return sales
+}
+
+export const getDataTableRowsKeys = (dataTable: Sales): string[] => {
+  return Object.keys(dataTable)
+}
+type SortConfigType = {
+  key: string
+  direction: 'ascending' | 'descending' | string
+}
+type sortDataTableType = {
+  data: Sales
+  sortConfig: SortConfigType
+}
+export const sortDataTable = ({data, sortConfig}: sortDataTableType) => {
+  const sortBy = sortConfig.key
+
+  const sorted = Object.values(data).sort((a: any, b: any) => {
+    if (sortConfig.direction === 'ascending') {
+      return a[sortBy] - b[sortBy]
+    } else {
+      return b[sortBy] - a[sortBy]
+    }
+  })
+  return sorted
 }
