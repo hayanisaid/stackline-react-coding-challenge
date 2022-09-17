@@ -1,7 +1,6 @@
 import {createSlice, createAsyncThunk} from '@reduxjs/toolkit'
-import type {PayloadAction} from '@reduxjs/toolkit'
-import type {RootState} from '../store'
 import {fetchData} from '../../services/api'
+import {RootState} from '../store'
 import {ResponseDataType} from '../../services/types'
 interface iStateType {
   isLoading: Boolean
@@ -25,7 +24,6 @@ const initialState: iStateType = {
 }
 export const productSlice = createSlice({
   name: 'product',
-  // `createSlice` will infer the state type from the `initialState` argument
   initialState,
   reducers: {
     fetchProductData: (state) => {
@@ -42,4 +40,5 @@ export const productSlice = createSlice({
     })
   }
 })
+export const selectProduct = (state: RootState) => state.product
 export default productSlice.reducer

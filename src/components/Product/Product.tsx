@@ -3,13 +3,13 @@ import {useDispatch, useSelector} from 'react-redux'
 import ProductCard from '../ProductCard'
 import SalesChart from '../SalesChart'
 import SalesTable from '../SalesTable'
-import {fetchProduct} from '../../redux/reducers/productReducer'
+import {fetchProduct, selectProduct} from '../../redux/reducers/productSlice'
 import type {AppDispatch} from '../../redux/store'
 import s from './Product.module.css'
 import {getProductDetails} from '../../utils/getProductDetails'
 const Product: React.FunctionComponent = () => {
   const dispatch = useDispatch<AppDispatch>()
-  const data = useSelector((state: any) => state.product)
+  const data = useSelector(selectProduct)
   useEffect(() => {
     dispatch(fetchProduct())
   }, [!data])

@@ -1,14 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import type {PreloadedState} from '@reduxjs/toolkit'
 import './index.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
 import {Provider} from 'react-redux'
 import {store} from './redux/store'
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
+const preloadedState = {}
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
+    <Provider store={store(preloadedState)}>
       <App />
     </Provider>
   </React.StrictMode>
