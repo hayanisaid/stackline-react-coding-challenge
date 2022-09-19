@@ -53,7 +53,7 @@ type sortDataTableType = {
   sortConfig: SortConfigType
 }
 export const sortDataTable = ({data, sortConfig}: sortDataTableType) => {
-  const sortBy: any = sortConfig.key
+  const sortBy: string = sortConfig.key
 
   const sorted = Object.values(data).sort((a: any, b: any) => {
     if (sortConfig.direction === 'ascending') {

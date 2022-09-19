@@ -43,4 +43,4 @@ const SalesTable: React.FunctionComponent<SalesTableProps> = () => {
   )
 }
 
-export default SalesTable
+export default React.memo(SalesTable)
