@@ -35,7 +35,7 @@ export const productSlice = createSlice({
       state.isLoading = true
     })
     builder.addCase(fetchProduct.fulfilled, (state, {payload}) => {
-      state.isLoading = true
+      state.isLoading = false
       state.productData = payload
     })
     builder.addCase(fetchProduct.rejected, (state, {payload, error}) => {
