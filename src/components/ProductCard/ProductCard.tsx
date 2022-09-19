@@ -12,7 +12,7 @@ const ProductCard: React.FunctionComponent<ProductCardProps> = ({details}) => {
   }
   return (
     <div className={s.container}>
-      <img height={200} width={200} src={details?.image} alt={details?.title} />
+      <img height={200} width={200} src={details?.image} alt={details?.subtitle} />
       <h3 className={s.title}>{details?.title}</h3>
       <p className={s.description}>{details?.subtitle}</p>
       <div className={s.tagsContainer}>
