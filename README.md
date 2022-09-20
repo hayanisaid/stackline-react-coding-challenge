@@ -28,12 +28,13 @@ Your app is ready to be deployed!
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 ### Takeaways
+
 - 📌 Using Redux for such a small app was unnecessary; I would only use Redux if I needed to manage a complex state.
 
 - 📌 I applied components decomposition patterns, and abstracting UI from the logic to create maintainable and scalable code.
 
-- 📌 To retrieve the JSON file, I created a simple service that uses the [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch API) API. If I were to create an app that required calling various Endpoints, I would make the API service more effecient and reusable to handle various HTTP calls [POST, GET, PUT, DELETE].
+- 📌 To retrieve the JSON file, I created a simple service that uses the [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch) API. If I were to create an app that required calling various Endpoints, I would make the API service more effecient and reusable to handle various HTTP calls [POST, GET, PUT, DELETE].
 
-- 📌 For advanced data fetching and caching, using [RTK](https://redux-toolkit.js.org/rtk-query/overview) in this app would be a good choice to cache API requests. if we were to consume a GraphQL API,(Apollo-graphql)[https://www.apollographql.com/] would be a good decision. 
+- 📌 For advanced data fetching and caching, using [RTK](https://redux-toolkit.js.org/rtk-query/overview) in this app would be a good choice to cache API requests. if we were to consume a GraphQL API,[Apollo-graphql](https://www.apollographql.com/) would be a good decision. 
 
 
