@@ -1,6 +1,4 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Simple React Redux App
 
 ## Available Scripts
 
@@ -29,18 +27,13 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+### Takeaways
+- 📌 Using Redux for such a small app was unnecessary; I would only use Redux if I needed to manage a complex state.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- 📌 I applied components decomposition patterns, and abstracting UI from the logic to create maintainable and scalable code.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- 📌 To retrieve the JSON file, I created a simple service that uses the (Fetch)[https://developer.mozilla.org/en-US/docs/Web/API/Fetch API] API. If I were to create an app that required calling various Endpoints, I would make the API service more effecient and reusable to handle various HTTP calls [POST, GET, PUT, DELETE].
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- 📌 For advanced data fetching and caching, using (RTK)[https://redux-toolkit.js.org/rtk-query/overview] in this app would be a good choice to cache API requests. if we were to consume a GraphQL API,(Apollo-graphql)[https://www.apollographql.com/] would be a good decision. 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
